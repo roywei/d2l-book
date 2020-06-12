@@ -207,11 +207,11 @@ class Builder(object):
     @_once
     def html(self):
         self.rst()
-        self.colab()
-        self.sagemaker()
+        #self.colab()
+        #self.sagemaker()
         run_cmd(['sphinx-build', self.config.rst_dir, self.config.html_dir,
                  '-b html -c', self.config.rst_dir, self.sphinx_opts])
-        colab.add_button(self.config.colab, self.config.html_dir)
+        #colab.add_button(self.config.colab, self.config.html_dir)
 
     @_once
     def ipynb(self):
