@@ -185,7 +185,7 @@ class Builder(object):
 
     @_once
     def rst(self):
-        self.eval()
+        # self.eval()
         notebooks = find_files(os.path.join(self.config.eval_dir, '**', '*.ipynb'))
         updated_notebooks = get_updated_files(
             notebooks, self.config.eval_dir, self.config.rst_dir, 'ipynb', 'rst')
