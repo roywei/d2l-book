@@ -127,7 +127,7 @@ class Builder(object):
             logging.info('Copying %s to %s', src, tgt)
             mkdir(os.path.dirname(tgt))
             shutil.copyfile(src, tgt)
-        self._rm_tgt_files('md', 'ipynb', self.config.eval_dir)
+        #self._rm_tgt_files('md', 'ipynb', self.config.eval_dir)
 
     # Remove target files (e.g., eval and rst) based on removed files under src
     def _rm_tgt_files(self, src_ext, tgt_ext, tgt_dir, must_incls=None):
@@ -201,8 +201,8 @@ class Builder(object):
 
         must_incl_rst_files = get_tgt_files_from_src_pattern(
                 self.config.build['rsts'], self.config.rst_dir, 'rst', 'rst')
-        self._rm_tgt_files('md', 'rst', self.config.rst_dir,
-                           must_incl_rst_files)
+        # self._rm_tgt_files('md', 'rst', self.config.rst_dir,
+        #                    must_incl_rst_files)
 
     @_once
     def html(self):
